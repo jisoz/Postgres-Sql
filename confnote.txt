@@ -1,0 +1,8 @@
+
+###postgres.conf######
+
+if we want  Enable pg_stat_statements => change shared_preload_libraries='pg_stat_statements'
+open postgres container and make: 
+psql -U postgres
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+SELECT calls, query FROM pg_stat_statements LIMIT 1;

@@ -1,0 +1,13 @@
+#build the image first docker build -t custom_postgres:16 .  (in same location where we made Dockerfile)
+version: '3.8'
+services:
+  postgres:
+    image: custom_postgres:16
+    network_mode: host
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./:/docker-entrypoint-initdb.d
+    restart: always

@@ -1,0 +1,7 @@
+#publication 
+ go to odroid postgres...          wal_level logical
+
+CREATE PUBLICATION pub_chft1 FOR TABLES IN SCHEMA chft1;
+CREATE PUBLICATION
+
+verify \dRp+ pub_chft1
